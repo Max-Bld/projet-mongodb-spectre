@@ -1,0 +1,1 @@
+# mongo-project-template
