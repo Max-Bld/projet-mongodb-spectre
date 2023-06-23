@@ -22,8 +22,3 @@ class MongoDBSingleton:
 
     def get_collection(self, collection_name):
         return self.db[collection_name]
-    
-
-# Use example :
-    # mongo_singleton = MongoDBSingleton.get_instance()
-    # collection = mongo_singleton.get_collection('nom_de_la_collection')
