@@ -16,7 +16,7 @@ For this project, the following file has to list the python dependencies of your
 
 
 ## About environment
-The file named **.env-**template** list the required environnement variables that your project need, but **does not** contains any citical informations such as credentials. It can contains **example values**. It's purpose is to show how to build the **.env** file.
+The file named **.env-template** list the required environnement variables that your project need, but **does not** contains any citical informations such as credentials. It can contains **example values**. It's purpose is to show how to build the **.env** file.
 
 The **.env** needs to be listed in the **.gitignore**, it's **not versionned**, it's **only in your system**.
 
@@ -32,3 +32,11 @@ List here the steps to follow to run the application.
 
 ## How to use
 Describe here how to use, launch ... your application.
+- Import the dataset using ...
+- Run the application using ...
+
+
+
+***
+## Troubleshooting
+You can list here, if needed, the common issues that the users of your app can encounter.
