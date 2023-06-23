@@ -2,8 +2,11 @@
 
 ## Getting started
 This is a template you have to follow for your application architecture.
+
 Clone it, replace with your data, update this file...
+
 If you struggle to edit this file, the format **.md** is called MarkDown, read the doc :)
+
 This file is displayed on your github project page, it needs to contain a short description of your application and the steps to use it. **You have to edit it**.
 
 
