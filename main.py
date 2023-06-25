@@ -1,2 +1,11 @@
-# import os
-# os.environ.get('KEY_THAT_MIGHT_EXIST', default_value)
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+
+def main():
+    # Your code goes here
+    pass    
+    
+if __name__ == "__main__":
+    main()

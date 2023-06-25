@@ -1,6 +1,10 @@
 from pymongo import MongoClient
 import os
-# os.environ.get('KEY_THAT_MIGHT_EXIST', default_value)
+from dotenv import load_dotenv
+
+# Load the environment variables
+load_dotenv()
+# Read env vars like this : os.environ.get('KEY_THAT_MIGHT_EXIST', default_value)
 
 
 class MongoDBSingleton:
@@ -17,7 +21,7 @@ class MongoDBSingleton:
             raise Exception("Ce Singleton est déjà instancié ! Utilisez la méthode get_instance().")
         else:
             MongoDBSingleton.__instance = self
-            self.client = MongoClient(os.environ.get('MONGO_HOST', 'localhost'), os.environ.get('MONGO_PORT', 27017))
+            self.client = MongoClient(os.environ.get('MONGO_HOST', 'localhost'), int(os.environ.get('MONGO_PORT', 27017)))
             self.db = self.client[os.environ.get('MONGO_DB_NAME')]
 
     def get_collection(self, collection_name):
