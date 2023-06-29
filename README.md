@@ -8,9 +8,7 @@ A l'avenir, ces données permettront de générer un modèle par apprentissage a
 
 ## Dependencies
 
-For this project, the following file has to list the python dependencies of your project.
-
-- **requirements.in** set your app dependencies here and set version requirements if needed.
+Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
 
 ## About environment
 
