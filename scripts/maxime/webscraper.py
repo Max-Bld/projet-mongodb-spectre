@@ -5,15 +5,13 @@ Created on Thu Jun 29 16:57:07 2023
 @author: digi
 """
 
-### Change your directory path line 76
-
     # Importing librairies
 
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
 
-    # Get the html code of the main page (called 'parent') containing links to other sections of the website
+    # Get HTML code from the main page ('parent') containing links to sub-sections (children)
 
 parent = "https://theremin.music.uiowa.edu/"
 
@@ -21,7 +19,7 @@ response = requests.get(parent)
 
 soup = BeautifulSoup(response.content, 'html.parser')
 
-    # Put in a list all the other sections' path (called 'children')
+    # Put in a list all the other sections' path ('children')
 
 list_child = []
 
@@ -70,7 +68,11 @@ for n in sound_list_3:
     if ('ff' in n) or ('pp' in n) or ('mf' in n):
         sound_list_3.remove(n)
 
-    # Download all sound files listed in the previous list with their respective names
+    #%% Download all sound files listed in the previous list with their respective names
+
+split_word = "b-spectre"
+root = (__file__.split(split_word)[0])
+path_to_dl_files = fr"{root}b-spectre\assets\theremin\zip".replace( "\\", "/")
 
 for n in sound_list_3 :
-    urllib.request.urlretrieve(parent+n, f"C:\\Users\\digi\\maxime_blanchard\\projet_spectre\\data\\{n.split('/')[-1]}")
+    urllib.request.urlretrieve(parent+n, f"{path_to_dl_files}/{n.split('/')[-1]}")
