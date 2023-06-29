@@ -10,6 +10,7 @@ Created on Thu Jun 29 16:57:07 2023
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
+import os
 
     # Get HTML code from the main page ('parent') containing links to sub-sections (children)
 
@@ -41,7 +42,7 @@ for child in children:
     soup = BeautifulSoup(response.content, 'html.parser')
     soup_list.append(soup)
 
-   # Put in a list all sound files URL
+   #%% Put in a list all sound files URL
     
 sound_list = []
             
@@ -72,7 +73,10 @@ for n in sound_list_3:
 
 split_word = "b-spectre"
 root = (__file__.split(split_word)[0])
-path_to_dl_files = fr"{root}b-spectre\assets\theremin\zip".replace( "\\", "/")
+path_to_dl_files = fr"{root}b-spectre\assets\theremin\webscrape_test".replace( "\\", "/")
+
+if os.path.exists(path_to_dl_files) == False:
+    os.mkdir(path_to_dl_files)
 
 for n in sound_list_3 :
     urllib.request.urlretrieve(parent+n, f"{path_to_dl_files}/{n.split('/')[-1]}")
