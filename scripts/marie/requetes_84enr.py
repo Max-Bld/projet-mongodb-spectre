@@ -203,7 +203,7 @@ for i in range(len(liste_type_inst)):
 caracteristiques_signaux = pd.DataFrame(data)
 
 # Requête
-pipeline = [{'$match': {"instrument":'theremin', "type":"trumpet", "pitched":True, "option":"novib", "dynamique":"mf"}},
+pipeline = [{'$match': {"instrument":'theremin', "type":"trumpet", "pitched":True, "option":"nonvib", "dynamique":"mf"}},
             {'$group':{'_id':"$note",'total_instrument':{'$count':{}}}}, 
             {'$sort':{'total_instrument':-1}}]        
 results = collection.aggregate(pipeline)
