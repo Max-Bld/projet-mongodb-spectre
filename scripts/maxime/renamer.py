@@ -11,8 +11,13 @@ import shutil
     #%% Paths
 
 files_list = []
+
+    # Current working path
+
+split_word = "b-spectre"
+root = (__file__.split(split_word)[0] + r"b-spectre\assets\theremin\pitched").replace( "\\", "/")
+
 keywords_banned = ['stereo', 'wav', 'silence']
-root = "C:/Users/formation/Desktop/AI_2023_diginamic/projet_musique_python/theremin/pitched"
 sound_source = root[-16:].removesuffix(r"/pitched")
 
 #%%
@@ -146,3 +151,8 @@ for violinarco_file in os.listdir(f"{root}/Violin.arco.mono.1644.1/"):
     old_name = violinarco_file
     new_name = violinarco_file[:22] + violinarco_file[25:29] + violinarco_file[21:24] + violinarco_file[29:]
     os.rename(f"{root}/Violin.arco.mono.1644.1/{old_name}",f"{root}/Violin.arco.mono.1644.1/{new_name}")
+    
+
+#%%
+
+
