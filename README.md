@@ -2,9 +2,9 @@
 
 ## But du projet
 
-Le Projet Spectre a pour but la conception d’un programme capable d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur un jeu de données d’environ quatre mille fichiers audios dont sont extraits les spectres harmoniques.
+Le *Projet Spectre* est un programme qui a pour but d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur un jeu de données d’environ quatre mille fichiers audios dont sont extraits les spectres harmoniques.
 
-A l'avenir, ces données permettront de générer un modèle par apprentissage automatique supervisé, qui prédira quel instrument est joué.
+Par exemple, admettons qu'une basse joue une note aigue pouvant facilement être confondue avec celle jouée par une guitare : grâce à l'analyse spectrale du fichier audio, le *Projet Spectre* sera capable de distinguer et d'identifier l'instrument joué.
 
 ## Dépendances
 
@@ -20,13 +20,7 @@ The **.env** needs to be listed in the **.gitignore**, it's **not versionned**, 
 
 ## Configuration
 
-List here the steps to follow to run the application.
-
-- You need to have access to a MongoDB database
-- Create a virtual environment
-- Install the dependencies listed in requirements.in
-- Create you .env file based on .env-template
-- ...
+1. Installation
 
 ## How to use
 
