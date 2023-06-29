@@ -32,10 +32,12 @@ if os.path.exists(f"{root}/Guitar.mono.1644.1/") == True :
 else :
     pass
 
+
     #%% Cleaning the sound bank
 
-for folder in os.listdir(root):
-    
+
+
+for folder in os.listdir(root):   
     if "stereo" in folder:
         shutil.rmtree(f"{root}/{folder}")
         print('delete stereo')
@@ -58,89 +60,93 @@ for folder in os.listdir(root):
         # Remove files containing forbidden keywords
 
 for folder in os.listdir(root):
-    for file in os.listdir(f"{root}/{folder}"):
-        files_list.append(file)
-        for keyword in keywords_banned:
-            if keyword in file:
-                os.remove(f"{root}/{folder}/{file}")
-         
-        # Adding sound bank name
-    
-    keywords_to_change = ['.arco', '.stick', '.pizz', '.brass']
-    keywords_dynamic = ['pp', 'mf', 'ff']    
     for file in os.listdir(f"{root}/{folder}") :
-        old_name =   f"{root}/{folder}/{file}"
-        new_name = f"{root}/{folder}/1_{sound_source}_{file}"
-        os.rename(old_name,new_name)              
-        
-        # Instrument name standardization
-        
-    for file in os.listdir(f"{root}/{folder}") :
-        for keyword in keywords_to_change:
-            if keyword in file :
-                new_file = file.replace(keyword, keyword[1:])   
+        if file.count('_') == 5:
+            continue
+        else :            
+            for file in os.listdir(f"{root}/{folder}"):
+                files_list.append(file)
+                for keyword in keywords_banned:
+                    if keyword in file:
+                        os.remove(f"{root}/{folder}/{file}")
+                 
+                # Adding sound bank name
+            
+            keywords_to_change = ['.arco', '.stick', '.pizz', '.brass']
+            keywords_dynamic = ['pp', 'mf', 'ff']    
+            for file in os.listdir(f"{root}/{folder}") :
                 old_name =   f"{root}/{folder}/{file}"
-                new_name = f"{root}/{folder}/{new_file}"
-                os.rename(old_name,new_name)   
-    
-        # Adding mf if dynamic is null
-    
-    for file in os.listdir(f"{root}/{folder}") :                    
-        if '.ff' in file:
-            continue
-        elif '.mf' in file:
-            continue
-        elif '.pp' in file:
-            continue
-        else: 
-            new_file = file[:-5] + "_mf" + file[-5:]
-            old_name = f"{root}/{folder}/{file}"
-            new_name = f"{root}/{folder}/{new_file}"
-            os.rename(old_name,new_name)
-           
-        # Replacing . with _ and uniformisation of file extension to .aiff
+                new_name = f"{root}/{folder}/1_{sound_source}_{file}"
+                os.rename(old_name,new_name)              
+                
+                # Instrument name standardization
+                
+            for file in os.listdir(f"{root}/{folder}") :
+                for keyword in keywords_to_change:
+                    if keyword in file :
+                        new_file = file.replace(keyword, keyword[1:])   
+                        old_name =   f"{root}/{folder}/{file}"
+                        new_name = f"{root}/{folder}/{new_file}"
+                        os.rename(old_name,new_name)   
             
-    for file in os.listdir(f"{root}/{folder}") :                    
-        new_file = file.lower().replace('.mono', '').replace('.', '_').replace('_aiff', '.aiff').replace("_aif", '.aiff')
-        old_name = f"{root}/{folder}/{file}"
-        new_name = f"{root}/{folder}/{new_file}"
-        os.rename(old_name,new_name)
-        
-        
-    
-    for file in os.listdir(f"{root}/{folder}") :
-        # print(file.count('_'))
-        if file.count('_') < 4:
-            os.remove(f"{root}/{folder}/{file}")
-            continue
-        
-        elif file.count('_') > 5:
-            os.remove(f"{root}/{folder}/{file}")
-            continue
+                # Adding mf if dynamic is null
+            
+            for file in os.listdir(f"{root}/{folder}") :                    
+                if '.ff' in file:
+                    continue
+                elif '.mf' in file:
+                    continue
+                elif '.pp' in file:
+                    continue
+                else: 
+                    new_file = file[:-5] + "_nodyn" + file[-5:]
+                    old_name = f"{root}/{folder}/{file}"
+                    new_name = f"{root}/{folder}/{new_file}"
+                    os.rename(old_name,new_name)
+                   
+                # Replacing . with _ and uniformisation of file extension to .aiff
                     
-        elif ((file.count('_') == 4) and 'mf' in file):
-            new_file = file.replace('_mf', '_nooption_mf')
-            old_name = f"{root}/{folder}/{file}"
-            new_name = f"{root}/{folder}/{new_file}"
-            os.rename(old_name,new_name)
-            continue
+            for file in os.listdir(f"{root}/{folder}") :                    
+                new_file = file.lower().replace('.mono', '').replace('.', '_').replace('_aiff', '.aiff').replace("_aif", '.aiff')
+                old_name = f"{root}/{folder}/{file}"
+                new_name = f"{root}/{folder}/{new_file}"
+                os.rename(old_name,new_name)
+                
+                
             
-        elif ((file.count('_') == 4) and 'pp' in file):
-            new_file = file.replace('_pp', '_nooption_pp')
-            old_name = f"{root}/{folder}/{file}"
-            new_name = f"{root}/{folder}/{new_file}"
-            os.rename(old_name,new_name)
-            continue
-        
-        elif ((file.count('_') == 4) and 'ff' in file):
-            new_file = file.replace('_ff', '_nooption_ff')
-            old_name = f"{root}/{folder}/{file}"
-            new_name = f"{root}/{folder}/{new_file}"
-            os.rename(old_name,new_name)
-            continue
-            
-        else:
-            continue
+            for file in os.listdir(f"{root}/{folder}") :
+                # print(file.count('_'))
+                if file.count('_') < 4:
+                    os.remove(f"{root}/{folder}/{file}")
+                    continue
+                
+                elif file.count('_') > 5:
+                    os.remove(f"{root}/{folder}/{file}")
+                    continue
+                            
+                elif ((file.count('_') == 4) and 'mf' in file):
+                    new_file = file.replace('_mf', '_nooption_mf')
+                    old_name = f"{root}/{folder}/{file}"
+                    new_name = f"{root}/{folder}/{new_file}"
+                    os.rename(old_name,new_name)
+                    continue
+                    
+                elif ((file.count('_') == 4) and 'pp' in file):
+                    new_file = file.replace('_pp', '_nooption_pp')
+                    old_name = f"{root}/{folder}/{file}"
+                    new_name = f"{root}/{folder}/{new_file}"
+                    os.rename(old_name,new_name)
+                    continue
+                
+                elif ((file.count('_') == 4) and 'ff' in file):
+                    new_file = file.replace('_ff', '_nooption_ff')
+                    old_name = f"{root}/{folder}/{file}"
+                    new_name = f"{root}/{folder}/{new_file}"
+                    os.rename(old_name,new_name)
+                    continue
+                    
+                else:
+                    continue
         
 #%% Special process for guitar files
 
