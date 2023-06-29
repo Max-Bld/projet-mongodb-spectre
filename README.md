@@ -6,7 +6,7 @@ Le Projet Spectre a pour but la conception d’un programme capable d’identifi
 
 A l'avenir, ces données permettront de générer un modèle par apprentissage automatique supervisé, qui prédira quel instrument est joué.
 
-## Dependencies
+## Dépendances
 
 Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
 
