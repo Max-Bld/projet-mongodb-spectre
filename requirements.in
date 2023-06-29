@@ -1,3 +1,17 @@
 # Install with pip install -r requirements.in
+aifc
+BeautifulSoup
+bson
+matplotlib
+numpy
+os
+pandas
+pathlib
 pymongo
 python-dotenv
+requests
+seaborn
+shutil
+tkinter
+urllib
+zipfile
