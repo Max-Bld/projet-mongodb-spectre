@@ -22,10 +22,15 @@ sound_source = root[-16:].removesuffix(r"/pitched")
 
 #%%
 
-for guitar_file in os.listdir(f"{root}/Guitar.mono.1644.1/1644mono"):
-    os.rename(f"{root}/Guitar.mono.1644.1/1644mono/{guitar_file}", f"{root}/Guitar.mono.1644.1/{guitar_file}")
+if os.path.exists(f"{root}/Guitar.mono.1644.1/") == True :
 
-os.rmdir(f"{root}/Guitar.mono.1644.1/1644mono")
+    for guitar_file in os.listdir(f"{root}/Guitar.mono.1644.1/1644mono"):
+        os.rename(f"{root}/Guitar.mono.1644.1/1644mono/{guitar_file}", f"{root}/Guitar.mono.1644.1/{guitar_file}")
+    
+    os.rmdir(f"{root}/Guitar.mono.1644.1/1644mono")
+    
+else :
+    pass
 
     #%% Cleaning the sound bank
 
@@ -139,20 +144,24 @@ for folder in os.listdir(root):
         
 #%% Special process for guitar files
 
+if os.path.exists(f"{root}/Guitar.mono.1644.1/") == True :
 
-for guitar_file in os.listdir(f"{root}/Guitar.mono.1644.1/"):
-    old_name = guitar_file
-    new_name = guitar_file[:18] + guitar_file[21:25] + guitar_file[17:20] + guitar_file[25:]
-    os.rename(f"{root}/Guitar.mono.1644.1/{old_name}",f"{root}/Guitar.mono.1644.1/{new_name}")
-    
-#%% Special process for cello
+    for guitar_file in os.listdir(f"{root}/Guitar.mono.1644.1/"):
+        old_name = guitar_file
+        new_name = guitar_file[:18] + guitar_file[21:25] + guitar_file[17:20] + guitar_file[25:]
+        os.rename(f"{root}/Guitar.mono.1644.1/{old_name}",f"{root}/Guitar.mono.1644.1/{new_name}")
+else:
+    pass
 
-for violinarco_file in os.listdir(f"{root}/Violin.arco.mono.1644.1/"):
-    old_name = violinarco_file
-    new_name = violinarco_file[:22] + violinarco_file[25:29] + violinarco_file[21:24] + violinarco_file[29:]
-    os.rename(f"{root}/Violin.arco.mono.1644.1/{old_name}",f"{root}/Violin.arco.mono.1644.1/{new_name}")
-    
+#%% Special process for violin
 
-#%%
+if os.path.exists(f"{root}/Violin.arco.mono.1644.1/") == True :
 
+    for violinarco_file in os.listdir(f"{root}/Violin.arco.mono.1644.1/"):
+        old_name = violinarco_file
+        new_name = violinarco_file[:22] + violinarco_file[25:29] + violinarco_file[21:24] + violinarco_file[29:]
+        os.rename(f"{root}/Violin.arco.mono.1644.1/{old_name}",f"{root}/Violin.arco.mono.1644.1/{new_name}")
+        
+else:
+    pass
 
