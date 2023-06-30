@@ -8,7 +8,7 @@
 
 ### Projet Spectre GUI
 
-Pour l'instant, nous proposons *Projet Spectre GUI* est une interface graphique qui permet à l'utilisateur de sélectionner un fichier audio parmi une base de données et d'afficher, à gauche, le signal et, à droite, le spectre.
+Pour l'instant, nous proposons *Projet Spectre GUI*. C'est une interface graphique qui permet à l'utilisateur de sélectionner un fichier audio parmi une base de données et d'afficher, à gauche, le signal et, à droite, le spectre.
 
 ## Configuration
 
