@@ -56,6 +56,7 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
 
 ### Dépendances
 
+La version nécessaire de Python pour lancer le programme est _Python 3.10.9_.
 Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
 
 ### Base de données
