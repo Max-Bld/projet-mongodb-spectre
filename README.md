@@ -43,7 +43,7 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
    + Accéder aux différentes caractéristiques du fichier audio :     
      - Label : identifiant de _Tkinter_ ;
      - ID : identifiant unique de la base de données ;
-     - Database : indique le studio d'enregistrement ;
+     - Database : indique la source de l'enregistrement (i.e., le studio d'enregistrement) ;
      - Instrument : indique le nom de l'instrument ;
      - Option : précise si l'instrument a été joué avec un certain effet ;
      - 1ere H : indique la note de la première harmonique qui apparait dans le spectre ;
@@ -72,5 +72,5 @@ La base de données (de test ou "scrapée") est sous format .zip et est dézipp�
 
 ### Requêtes MongoDB
 
-Le fichier **requetes.py** regroupe les requêtes les plus pertinentes. Il doit être exécuté après **main.py**. Ne l'exécutez pas en entier, mais exécutez chaque requête séparément pour obtenir un résultat clair.
+Le fichier **requetes1304enr.py** regroupe les requêtes les plus pertinentes. Il doit être exécuté après **main.py**. Ne l'exécutez pas en entier, mais exécutez chaque requête séparément pour obtenir un résultat clair.
 
