@@ -47,5 +47,5 @@ La base de données (de test ou "scrapée") est sous format .zip et est dézipp�
 
 ### Requêtes MongoDB
 
-Le fichier **requetes.py** doit être exécuté après *main.py**. Il regroupe les requêtes les plus pertinentes pour la base de données réduite et pour la base de données complète. Ne l'exécutez pas en entier, mais exécutez chaque requête séparément pour obtenir un résultat clair.
+Le fichier **requetes.py** regroupe les requêtes les plus pertinentes. Il doit être exécuté après **main.py**. Ne l'exécutez pas en entier, mais exécutez chaque requête séparément pour obtenir un résultat clair.
 
