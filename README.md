@@ -18,24 +18,26 @@ Les dépendances nécessaires pour le programme sont référencées dans **requi
 
 ### Mise en place
 
-1. Exécuter cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
+1. Exécutez cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
 
         git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
 
-2. Lancer le fichier setup.py pour installer les dépendances nécessaires à *Projet Spectre* :
+2. Exécutez ces commandes pour installer les dépendances nécessaires à *Projet Spectre* :
 
         python setup.py
+        python Application.py
+        python mongo_db_singleton.py
 
-3. Lancer le fichier main.py pour accéder à l'application graphique.
+4. Lancez le fichier main.py pour accéder à l'application graphique.
 
         python main.py
 
 ### Base de données
 
-Nous proposons une base de données réduite pour tester Projet Spectre GUI. Cela permet : 
+Nous proposons une base de données réduite pour tester *Projet Spectre GUI* qui permet : 
 + d'augmenter la vitesse des requêtes MongoDB ;
 + éviter le long téléchargement des fichiers via internet (*web scraping*).
 
-Si vous voulez tester le web-scraping, un fichier **web_scraping.py** est disponible pour télécharger les données depuis https://theremin.music.uiowa.edu/ .
+Si vous voulez tester le web-scraping, un fichier **web_scraping.py** est disponible pour télécharger les données depuis (https://theremin.music.uiowa.edu/) .
 
-La base de données (de test et scrapée) est sous format .zip et est dézippée automatiquement par le programme dans le dossier ./projet-mongodb-spectre/assets/theremin/pitched/ .
+La base de données (de test et scrapée) est sous format .zip et est dézippée automatiquement par le programme dans le dossier (./projet-mongodb-spectre/assets/theremin/pitched/) .
