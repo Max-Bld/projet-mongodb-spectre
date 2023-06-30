@@ -21,10 +21,8 @@
 pymongo
 python-dotenv
 numpy 
-aifc
 matplotlib
 scipy
-os
 pandas
 tkinter
 bson
