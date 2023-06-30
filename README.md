@@ -18,11 +18,11 @@ Les dépendances nécessaires pour le programme sont référencées dans **requi
 
 ### Mise en place
 
-1. Exécutez cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
+1. Après vous être placé dans le chemin désiré, exécutez cette commande dans votre terminal pour télécharger sur votre ordinateur à la fois les programmes et la base de données :
 
         git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
 
-2. Exécutez ces commandes pour installer les dépendances nécessaires à *Projet Spectre GUI* :
+2. Exécutez ces commandes dans votre terminal pour installer les dépendances nécessaires à *Projet Spectre GUI* :
 
         python setup.py
         python Application.py
