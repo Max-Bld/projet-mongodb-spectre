@@ -38,10 +38,7 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
    Affichez-la et utilisez-les fonctionnalités de *Projet Spectre GUI*.
 
 2. Voici les différentes fonctionnalités de *Projet Spectre GUI* :
-   
-   ![fonctionnalites](https://i.ibb.co/Wxd6K82/fonctionnalites.png)
-
-
+ 
    + Sélectionner un fichier audio parmi la base de données en double cliquant dessus.
    + Accéder aux différentes caractéristiques du fichier audio :     
      - ID : un identifiant unique ;
@@ -53,7 +50,8 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
      - Source : indique le nom du fichier source ;
    + Afficher le signal dans le temps du fichier audio, et son spectre selon la fréquence en abscisse et de l'amplitude à l'axe des ordonnées ;
    + Vous déplacer dans la base de données page par page à l'aide des boutons _Previous_ et _Next_.
-   
+
+  ![fonctionnalites](https://i.ibb.co/Wxd6K82/fonctionnalites.png)
 
 ### Dépendances
 
