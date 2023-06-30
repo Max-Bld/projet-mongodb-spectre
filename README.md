@@ -14,7 +14,7 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
 
 ## Configuration
 
-### Installation et exécution
+### Installation
 
 1. Après vous être placé dans le chemin désiré, exécutez cette commande dans votre terminal pour télécharger sur votre ordinateur à la fois les programmes et la base de données :
 
@@ -29,9 +29,16 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
 
         main.py
 
-4. Une fenêtre Tkinter s'ouvrira dans votre barre Windows en arrière-plan, ouvrez-la :
+### Utilisation
+
+1. Une fenêtre _Tkinter_ s'ouvrira dans votre barre Windows en arrière-plan :
 
    ![barre windows](https://i.ibb.co/BcH064y/barre-windows.png)
+
+   Ouvrez-la et utilisez-les fonctionnalités de *Projet Spectre GUI*.
+
+2. Fonctionnalités de *Projet Spectre GUI* :
+   ![fonctionnalites](https://i.ibb.co/rtPxnTV/fonctionnalites.png)
 
 ### Dépendances
 
