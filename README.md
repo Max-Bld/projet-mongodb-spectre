@@ -12,6 +12,10 @@ Pour l'instant, nous proposons *Projet Spectre GUI*. C'est une interface graphiq
 
 ## Configuration
 
+### Dépendances
+
+Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
+
 ### Mise en place
 
 1. Exécuter cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
@@ -26,6 +30,12 @@ Pour l'instant, nous proposons *Projet Spectre GUI*. C'est une interface graphiq
 
         python main.py
 
-### Dépendances
+### Base de données
 
-Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
+Nous proposons une base de données réduite pour tester Projet Spectre GUI. Cela permet : 
++ d'augmenter la vitesse des requêtes MongoDB ;
++ éviter le long téléchargement des fichiers via internet (*web scraping*).
+
+Si vous voulez tester le web-scraping, un fichier **web_scraping.py** est disponible pour télécharger les données depuis https://theremin.music.uiowa.edu/ .
+
+La base de données (de test et scrapée) est sous format .zip et est dézippée automatiquement par le programme dans le dossier ./projet-mongodb-spectre/assets/theremin/pitched/ .
