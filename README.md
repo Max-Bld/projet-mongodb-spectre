@@ -10,6 +10,8 @@
 
 Pour l'instant, nous proposons *Projet Spectre GUI*. C'est une interface graphique qui permet à l'utilisateur de sélectionner un fichier audio parmi la base de données et d'afficher le signal et le spectre.
 
+*Projet Spectre GUI* est écrit en _Python_ et émet des requêtes _MongoDB_ à une base de données _NoSQL_. Les graphiques sont affichés à l'aide de _matplotlib_.
+
 ## Configuration
 
 ### Dépendances
