@@ -2,7 +2,7 @@
 
 ## But du projet
 
-Le *Projet Spectre* est un programme qui a pour but d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur un jeu de données d’environ quatre mille fichiers audios dont sont extraits les spectres harmoniques.
+*Projet Spectre* est un programme qui a pour but d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur un jeu de données d’environ trois mille fichiers audios dont sont extraits les spectres harmoniques.
 
 Par exemple, admettons qu'une basse joue une note aigue pouvant facilement être confondue avec celle jouée par une guitare : grâce à l'analyse spectrale du fichier audio, le *Projet Spectre* sera capable de distinguer et d'identifier l'instrument joué.
 
@@ -18,18 +18,25 @@ The **.env** needs to be listed in the **.gitignore**, it's **not versionned**, 
 
 ---
 
-## Configuration
+## Utilisation
 
-1. Installation
+### Fonctionnalités
 
-## How to use
+*Projet Spectre GUI* est une interface graphique qui permet à l'utilisateur de sélectionner un fichier audio parmi une base de données et d'afficher, à gauche, le signal et, à droite, le spectre.
 
-Describe here how to use, launch ... your application.
+### Mise en place
 
-- Import the dataset using ...
-- Run the application using ...
+1. Exécuter cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
 
----
+    git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
+
+2. Lancer le fichier setup.py pour installer les dépendances nécessaires à *Projet Spectre* :
+
+    python setup.py
+
+3. Lancer le fichier main.py pour accéder à l'application graphique.
+
+    python main.py
 
 ## Troubleshooting
 
