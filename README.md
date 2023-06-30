@@ -39,6 +39,7 @@ Les dépendances nécessaires pour le programme sont référencées dans **requi
 Nous proposons une base de données réduite pour tester *Projet Spectre GUI* qui permet : 
 + d'augmenter la vitesse des requêtes MongoDB dans l'application ;
 + éviter le long téléchargement des fichiers via internet (*web scraping*).
+
 Son chemin d'accès est : _./projet-mongodb-spectre/assets/theremin/zip/_.
 
 Si vous voulez cepandant tester le web-scraping et obtenir la base de données entière (environ 20GB), un fichier **web_scraping.py** est disponible pour la télécharger depuis https://theremin.music.uiowa.edu/ .
