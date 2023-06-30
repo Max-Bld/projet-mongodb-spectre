@@ -42,7 +42,7 @@ Nous proposons une base de données réduite pour tester *Projet Spectre GUI* qu
 
 Son chemin d'accès est : _./projet-mongodb-spectre/assets/theremin/zip/_.
 
-Si vous voulez cepandant tester le web-scraping et obtenir la base de données entière (environ 20GB), un fichier **web_scraping.py** est disponible pour la télécharger depuis https://theremin.music.uiowa.edu/ .
+Si vous voulez cependant tester le web-scraping et obtenir la base de données entière (environ 20GB), un fichier **web_scraping.py** est disponible pour la télécharger depuis https://theremin.music.uiowa.edu/ .
 
 La base de données (de test ou "scrapée") est sous format .zip et est dézippée automatiquement par le programme dans le dossier *./projet-mongodb-spectre/assets/theremin/pitched/*.
 
