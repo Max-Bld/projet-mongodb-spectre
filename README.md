@@ -31,7 +31,7 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
 
 4. Une fenêtre Tkinter s'ouvrira dans votre barre Windows en arrière-plan, ouvrez-la :
 
-   ![barre windows](https://ibb.co/k5VND34)
+   ![barre windows](https://i.ibb.co/BcH064y/barre-windows.png)
 
 ### Dépendances
 
