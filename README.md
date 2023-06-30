@@ -38,7 +38,7 @@ Nous proposons une base de données réduite pour tester *Projet Spectre GUI* qu
 + d'augmenter la vitesse des requêtes MongoDB ;
 + éviter le long téléchargement des fichiers via internet (*web scraping*).
 
-Si vous voulez tester le web-scraping, un fichier **web_scraping.py** est disponible pour télécharger les données depuis https://theremin.music.uiowa.edu/ .
+Si vous voulez cepandant tester le web-scraping, un fichier **web_scraping.py** est disponible pour télécharger les données depuis https://theremin.music.uiowa.edu/ .
 
 La base de données (de test ou "scrapée") est sous format .zip et est dézippée automatiquement par le programme dans le dossier *./projet-mongodb-spectre/assets/theremin/pitched/*.
 
