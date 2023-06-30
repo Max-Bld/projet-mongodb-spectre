@@ -20,7 +20,7 @@ db = client[db_name]
 db.list_collection_names()
 
 # Connexion à la collection 'data'
-coll_name = "Full_data_with_harmonics_amp_and_pos"
+coll_name = "Full_data_with_harmonics_amp_and_pos_note_with_post_traitement_tkinter"
 collection = db[coll_name]
 
 
@@ -299,7 +299,10 @@ for i in range(len(liste_type_inst_nonvib)):
 
 # Vérification que toutes les valeurs de fréquences trouvées ci-dessous sont dans l'intervalle indiqué dans le fichier frequence_notes.csv
 import pandas as pd
-data = pd.read_csv("C:/Users/formation/Desktop/projet-mongo-maxime-marie-amine/assets/frequence_notes.csv")
+
+split_word = "b-spectre"
+root = (__file__.split(split_word)[0] + r"b-spectre\assets\frequence_notes.csv").replace( "\\", "/")
+data = pd.read_csv(root)
 
 # Trouver l'harmonique fondamentale (= la fréquence) de l'altoflute sur la note A4 
 query1 = {"type":"altoflute", "note": "A4"} 
