@@ -89,8 +89,7 @@ plt.show()
 # Dynamique
 liste_dynamique = []  
 valeur=[]  
-pipeline = [{"$match":{"instrument":"altoflute", "option":"nooption"}},
-            {'$group':{'_id':"$dynamique",'total_instrument':{'$count':{}}}}, 
+pipeline = [{'$group':{'_id':"$dynamique",'total_instrument':{'$count':{}}}}, 
             {'$sort':{'total_instrument':-1}}]        
 results = collection.aggregate(pipeline)
 print('\n--- Nombre total de documents par dynamique ---')
@@ -328,78 +327,23 @@ for j in range(4):
 # Y a-t'il des doublons dans nos enregistrements? 
 doublon = []
 pipeline = [
-    { "$group": {
+    {"$group": {
         "_id": {
-            "type": "$type,",
+            "type": "$type",
             "pitched": "$pitched",
             "option": "$option",
             "instrument": "$instrument",
-            "dynamique": "$dynamique"
-        },
-        "total": { "$count": {} }
-    }
-}]
+            "dynamique": "$dynamique"},
+        "total": {"$count": {}}}}, 
+    {"$sort": {"total":-1}},
+    {"$match": {
+        "total": {"$gte":2*12}}}
+]
 results = collection.aggregate(pipeline)
 for res in results:
     print(f"{res['_id']} : {res['total']/12}") # on divise par 12 car chaque enregistrement est toujours représenté 12 fois (1 enregistrement par note)
-    if res['total']/12 > 1 :
-        doublon.append([[res['_id']['instrument'],res['_id']['dynamique'],res['_id']['option']], res['total']/12])
+    doublon.append([[res['_id']['instrument'],res['_id']['dynamique'],res['_id']['option']], res['total']/12])
 
 print(f"Voici tous les instruments - dynamique - option qui ont des doublons : \n{doublon}")
 
-##### Stop
-# Distribution selon condition harmo1 = harmo_max et harmo1 != harmo_max    ============> en cours 
-ok = []  
-valeur = [] 
-pipeline = [
-    {"$match":{"Note_max_harmonique":{"$eq":"C5"}}},
-    {"$group":{
-        "_id":{
-            "Note_max_harmonique": "$Note_max_harmonique",
-            "Note_first_harmonique": "$Note_first_harmonique"
-        },
-        "total": { "$count": {} }
-    }}
-]
-results = collection.aggregate(pipeline)
-for res in results:
-    print(f"{res['_id']} : {res['total']}")
-    ok.append(str(res['_id']).replace('{', '').replace('}', '').replace('\'Note_max_harmonique\': ', '').replace('\'Note_first_harmonique\': ', ''))
-    valeur.append(res['total'])    
-
-ar = []
-liste_note = []
-# Pour C5
-ok = 38
-pas_ok = 7+4
-tot = ok + pas_ok
-ok = ok/tot*100
-pas_ok = pas_ok/tot*100
-
-ar.append([ok, pas_ok])
-liste_note.append('C5')
-df = pd.DataFrame(ar, index = liste_note, columns = ['ok', 'pas_ok'])
-df.plot(kind='bar', stacked=True, color=['steelblue', 'red'])
-
-
-##à 2
-ok = []  
-valeur = [] 
-pipeline = [
-    {
-        "$match": {"Note_max_harmonique": { "$ne": "$Note_first_harmonique" }, "Note_max_harmonique":{"$eq":"C5"}  }
-    },
-    {   "$group": {
-            "_id": {
-                "Note_max_harmonique": "$Note_max_harmonique",
-                "Note_first_harmonique": "$Note_first_harmonique"
-            },
-            "total": { "$count": {} }
-        }
-    }
-]
-results = collection.aggregate(pipeline)
-for res in results:
-    print(f"{res['_id']} : {res['total']}")
-
-
+pd.DataFrame(doublon, columns=['instrument', 'nombre enreg'])
