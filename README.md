@@ -4,7 +4,7 @@
 
 ### But du projet
 
-*Projet Spectre* est un programme qui a pour but d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur un jeu de données d’environ trois mille fichiers audios dont sont extraits les spectres harmoniques.
+*Projet Spectre* a pour but de concevoir un programme capable d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur une base de données constituée d’environ trois mille fichiers audios dont sont extraits les spectres harmoniques.
 
 ### Projet Spectre GUI
 
