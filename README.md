@@ -27,8 +27,7 @@ Les dépendances nécessaires pour le programme sont référencées dans **requi
 2. Exécutez ces commandes dans votre terminal pour installer les dépendances nécessaires à *Projet Spectre GUI* :
 
         python setup.py
-        python Application.py
-        python mongo_db_singleton.py
+        python Application.py        
 
 4. Lancez le fichier main.py pour accéder à l'application graphique.
 
