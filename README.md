@@ -38,7 +38,9 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
    Ouvrez-la et utilisez-les fonctionnalités de *Projet Spectre GUI*.
 
 2. Fonctionnalités de *Projet Spectre GUI* :
+   
    ![fonctionnalites](https://i.ibb.co/Wxd6K82/fonctionnalites.png)
+   
 
 ### Dépendances
 
