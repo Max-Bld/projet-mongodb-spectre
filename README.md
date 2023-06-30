@@ -41,8 +41,9 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
    
    ![fonctionnalites](https://i.ibb.co/Wxd6K82/fonctionnalites.png)
 
+
    + Sélectionner un fichier audio parmi la base de données en double cliquant dessus.
-   + Vous avez accès aux différentes caractéristiques du fichier audio :     
+   + Accéder aux différentes caractéristiques du fichier audio :     
      - ID : un identifiant unique ;
      - Database : indique le nom de la banque de sons (ex : Theremin) ;
      - Instrument : indique le nom de l'instrument (ex : altoflute) ;
@@ -50,8 +51,8 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
      - 1ere H : indique la note de la première harmonique qui apparait dans le spectre ;
      - H Max : indique la note de l'harmonique la plus forte dans le spectre ;
      - Source : indique le nom du fichier source ;
-   + En double -cliquant, vous avez également accès au signal dans le temps du fichier audio, et son spectre selon la fréquence en abscisse et de l'amplitude à l'axe des ordonnées ;
-   + Vous pouvez vous déplacer dans la base de données page par page à l'aide des boutons _Previous_ et _Next_.
+   + Afficher le signal dans le temps du fichier audio, et son spectre selon la fréquence en abscisse et de l'amplitude à l'axe des ordonnées ;
+   + Vous déplacer dans la base de données page par page à l'aide des boutons _Previous_ et _Next_.
    
 
 ### Dépendances
