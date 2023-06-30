@@ -33,9 +33,15 @@ def renamer():
 
     files_list = []
     
-    # The next two line standardized the path file
+    # The next lines standardized the path file
+    
+    
     split_word = "b-spectre"
     root = (__file__.split(split_word)[0] + r"b-spectre\assets\theremin\pitched").replace( "\\", "/")
+    
+    #%%
+    if os.path.exists(root) == False :        
+        os.mkdir(f"{root}")
     
     keywords_banned = ['stereo', 'wav', 'silence']
     sound_source = root[-16:].removesuffix(r"/pitched")
