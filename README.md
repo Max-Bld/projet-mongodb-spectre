@@ -28,15 +28,15 @@ The **.env** needs to be listed in the **.gitignore**, it's **not versionned**, 
 
 1. Exécuter cette commande dans votre terminal au chemin désiré pour télécharger à la fois les programmes et la base de données :
 
-    git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
+        git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
 
 2. Lancer le fichier setup.py pour installer les dépendances nécessaires à *Projet Spectre* :
 
-    python setup.py
+        python setup.py
 
 3. Lancer le fichier main.py pour accéder à l'application graphique.
 
-    python main.py
+        python main.py
 
 ## Troubleshooting
 
