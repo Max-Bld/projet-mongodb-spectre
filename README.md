@@ -25,21 +25,33 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
         setup.py
         Application.py        
 
-3. Lancez le fichier main.py pour accéder à l'application graphique.
+3. Lancez le fichier _main.py_ pour accéder à l'application graphique.
 
         main.py
 
 ### Utilisation
 
-1. Une fenêtre _Tkinter_ s'ouvrira dans votre barre Windows en arrière-plan :
+1. Une fois que le fichier _main.py_ est lancé, après que le processus de traitement des données est terminée, une fenêtre _Tkinter_ s'ouvrira dans votre barre Windows en arrière-plan :
 
    ![barre windows](https://i.ibb.co/BcH064y/barre-windows.png)
 
-   Ouvrez-la et utilisez-les fonctionnalités de *Projet Spectre GUI*.
+   Affichez-la et utilisez-les fonctionnalités de *Projet Spectre GUI*.
 
-2. Fonctionnalités de *Projet Spectre GUI* :
+2. Voici les différentes fonctionnalités de *Projet Spectre GUI* :
    
    ![fonctionnalites](https://i.ibb.co/Wxd6K82/fonctionnalites.png)
+
+   + Sélectionner un fichier audio parmi la base de données en double cliquant dessus.
+   + Vous avez accès aux différentes caractéristiques du fichier audio :     
+     - ID : un identifiant unique ;
+     - Database : indique le nom de la banque de sons (ex : Theremin) ;
+     - Instrument : indique le nom de l'instrument (ex : altoflute) ;
+     - Option : précise si l'instrument a été joué avec un certain effet (ex : vib signifie que l'instrument a été joué avec un effet de vibrato) ;
+     - 1ere H : indique la note de la première harmonique qui apparait dans le spectre ;
+     - H Max : indique la note de l'harmonique la plus forte dans le spectre ;
+     - Source : indique le nom du fichier source ;
+   + En double -cliquant, vous avez également accès au signal dans le temps du fichier audio, et son spectre selon la fréquence en abscisse et de l'amplitude à l'axe des ordonnées ;
+   + Vous pouvez vous déplacer dans la base de données page par page à l'aide des boutons _Previous_ et _Next_.
    
 
 ### Dépendances
