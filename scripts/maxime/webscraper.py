@@ -77,6 +77,8 @@ path_to_dl_files = fr"{root}b-spectre\assets\theremin\webscrape_test".replace( "
 
 if os.path.exists(path_to_dl_files) == False:
     os.mkdir(path_to_dl_files)
+    
+    # Put files in a separate folder for the presentation
 
 for n in sound_list_3 :
     urllib.request.urlretrieve(parent+n, f"{path_to_dl_files}/{n.split('/')[-1]}")
