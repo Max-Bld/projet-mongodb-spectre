@@ -1,8 +1,8 @@
-# Projet Spectre
+# Projet Spectre GUI
 
 ## Introduction
 
-### But du projet
+### But du Projet Spectre
 
 *Projet Spectre* a pour but de concevoir un programme capable d’identifier le type d’instrument de musique enregistré dans un fichier audio, quelle que soit la note jouée. Il s'appuie sur une base de données constituée d’environ trois mille fichiers audios dont sont extraits les spectres harmoniques.
 
