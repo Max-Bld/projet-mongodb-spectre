@@ -14,24 +14,28 @@ A l'heure actuelle, nous proposons *Projet Spectre GUI* : c'est une interface gr
 
 ## Configuration
 
-### Dépendances
-
-Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
-
 ### Installation et exécution
 
 1. Après vous être placé dans le chemin désiré, exécutez cette commande dans votre terminal pour télécharger sur votre ordinateur à la fois les programmes et la base de données :
 
         git clone https://www.github.com/Max-Bld/projet-mongodb-spectre.git
 
-2. Exécutez ces commandes dans votre terminal pour installer les dépendances nécessaires à *Projet Spectre GUI* :
+2. Exécutez ces fichiers dans votre IDE Python pour installer les dépendances nécessaires à *Projet Spectre GUI* :
 
-        python setup.py
-        python Application.py        
+        setup.py
+        Application.py        
 
-4. Lancez le fichier main.py pour accéder à l'application graphique.
+3. Lancez le fichier main.py pour accéder à l'application graphique.
 
-        python main.py
+        main.py
+
+4. Une fenêtre Tkinter s'ouvrira dans votre barre Windows en arrière-plan, ouvrez-la :
+
+   [barre windows](https://ibb.co/k5VND34)
+
+### Dépendances
+
+Les dépendances nécessaires pour le programme sont référencées dans **requirements.in**.
 
 ### Base de données
 
