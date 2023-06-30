@@ -22,7 +22,7 @@ db.list_collection_names()
 
 # Connexion à la collection 'data'
 #coll_name = "Full_data_with_harmonics_amp_and_pos"
-coll_name = "Full_data_with_harmonics_amp_and_pos_note_with_post_traitement"
+coll_name = "Full_data_with_harmonics_amp_and_pos_note_with_post_traitement_tkinter"
 collection = db[coll_name]
 
 
@@ -156,42 +156,43 @@ print(f"harmonique premiere : {liste_notes_harmo}")
 
 # Nombre de valeurs qui sont égale à 0 ou nooption 
 # Répartition des instruments lorsque Note_max_harmonique = '0' : pas de match trouvé sur la note
-pipeline = [{"$match":{"Note_max_harmonique":"0"}},
-            {"$group":{"_id":{
-                            "note_max_harmonique": "$Note_max_harmonique",
-                            "instrument" : "$instrument"
-                            }, "total":{"$count":{}}}},
-            {"$sort":{"_id":1}}]
-results = collection.aggregate(pipeline)
-print("Nombre d'enregistrements pour lesquels nous n\'avons pas trouvé de note_max_harmonique : ")
-instr = []
-tot = []
-for res in results:
-    print(f"{res['_id']['instrument']} : {res['total']}")
-    instr.append(res['_id']['instrument'])
-    tot.append(res['total'])
-plt.figure(6)
-sns.barplot(x=instr, y=tot).set(title="Note max harmonique inconnue (='0')")
-plt.show()
+# pipeline = [{"$match":{"Note_max_harmonique":"0"}},
+#             {"$group":{"_id":{
+#                             "note_max_harmonique": "$Note_max_harmonique",
+#                             "instrument" : "$instrument"
+#                             }, "total":{"$count":{}}}},
+#             {"$sort":{"_id":1}}]
+# results = collection.aggregate(pipeline)
+# print("Nombre d'enregistrements pour lesquels nous n\'avons pas trouvé de note_max_harmonique : ")
+# instr = []
+# tot = []
+
+# for res in results:
+#     print(f"{res['_id']['instrument']} : {res['total']}")
+#     instr.append(res['_id']['instrument'])
+#     tot.append(res['total'])
+# plt.figure(6)
+# sns.barplot(x=instr, y=tot).set(title="Note max harmonique inconnue (='0')")
+# plt.show()
 
 # Répartition des instruments lorsque Note_first_harmonique = '0' : pas de match trouvé sur la note
-pipeline = [{"$match":{"Note_first_harmonique":"0"}},
-            {"$group":{"_id":{
-                            "Note_first_harmonique": "$Note_first_harmonique",
-                            "instrument" : "$instrument"
-                            }, "total":{"$count":{}}}},
-            {"$sort":{"_id":1}}]
-results = collection.aggregate(pipeline)
-print("Nombre d'enregistrements pour lesquels nous n\'avons pas trouvé de note_first_harmonique : ")
-instr = []
-tot = []
-for res in results:
-    print(f"{res['_id']['instrument']} : {res['total']}")    
-    instr.append(res['_id']['instrument'])
-    tot.append(res['total'])
-plt.figure(7)
-sns.barplot(x=instr, y=tot).set(title="Note first harmonique inconnue (='0')")
-plt.show()
+# pipeline = [{"$match":{"Note_first_harmonique":"0"}},
+#             {"$group":{"_id":{
+#                             "Note_first_harmonique": "$Note_first_harmonique",
+#                             "instrument" : "$instrument"
+#                             }, "total":{"$count":{}}}},
+#             {"$sort":{"_id":1}}]
+# results = collection.aggregate(pipeline)
+# print("Nombre d'enregistrements pour lesquels nous n\'avons pas trouvé de note_first_harmonique : ")
+# instr = []
+# tot = []
+# for res in results:
+#     print(f"{res['_id']['instrument']} : {res['total']}")    
+#     instr.append(res['_id']['instrument'])
+#     tot.append(res['total'])
+# plt.figure(7)
+# sns.barplot(x=instr, y=tot).set(title="Note first harmonique inconnue (='0')")
+# plt.show()
 
 # Répartition des instruments lorsque option = 'nooption'
 pipeline = [{"$match":{"option":"nooption"}},
@@ -212,30 +213,9 @@ plt.figure(8)
 sns.barplot(x=instr, y=tot).set(title="Option inconnue (='nooption')")
 plt.show()
 
-# Distribution selon type-instrument-option-dynamique - choix 1 
-ok = []  
-valeur = []  
-pipeline = [
-    { "$group": {
-        "_id": {
-            "type": "$type",
-            "instrument": "$instrument",
-            "option": "$option",
-            "dynamique": "$dynamique"
-        },
-        "total": { "$count": {} }
-    }}
-]
-results = collection.aggregate(pipeline)
-for res in results:
-    print(f"{res['_id']} : {res['total']}")
-    ok.append(str(res['_id']).replace('{', '').replace('}', '').replace('\'type\': ', '').replace(' \'instrument\':', '').replace(' \'option\':', '').replace(' \'dynamique\':', '').replace('\'', ''))
-    valeur.append(res['total'])    
-plt.figure(9)
-sns.barplot(y=ok, x=valeur).set(title="Distribution selon les modalités d'instruments")
-plt.show()
 
-# Distribution selon type-instrument-option-dynamique - choix 2 -> on enlève theremin
+
+# Distribution selon type-instrument-option-dynamique
 ok = []  
 valeur = []  
 pipeline = [
@@ -281,8 +261,11 @@ for res in results:
 data = pd.DataFrame({'Instrument': x, 'Note': y, 'valeur': valeur})
 pivot_data = data.pivot(index='Note', columns='Instrument', values='valeur')
 pivot_data = pivot_data.fillna(0)
+index_values = pivot_data.index.tolist()
+new_index_order = index_values[::-1]
+pivot_table_reindexed = pivot_data.reindex(index=new_index_order)
 plt.figure(11)
-sns.heatmap(pivot_data, annot=True, cbar=True, cmap='plasma', annot_kws={"fontsize": 8})
+sns.heatmap(pivot_table_reindexed, annot=True, cbar=True, cmap='plasma', annot_kws={"fontsize": 8})
 plt.yticks(rotation=0)
 plt.tick_params(axis='y', labelsize=8)
 plt.title("Distribution du spectre musical")
