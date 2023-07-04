@@ -20,6 +20,8 @@ from tkinter import ttk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from bson import ObjectId
+from tqdm import tqdm
+
 
     
 
@@ -31,11 +33,15 @@ from setup import unzipper
 
 # STEP 1 : Unzip file the file with all the sound files
 
-unzipper()
+print('Dezipping files from ./assets/zip to ./assets/pitched ...')
+for i in tqdm(range(1000)):
+    unzipper()
 
 # STEP 2 : Make all the name standard for the treatement 
 
-renamer()
+print('Renaming files...')
+for i in tqdm(range(1000)):
+    renamer()
 
 # STEP 3 : read CSV file with the frequencies relative to all the notes
 
