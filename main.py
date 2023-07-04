@@ -53,6 +53,15 @@ from mongo_db_singleton import *
 
 mongo_client = MongoDBSingleton.get_instance().client
 
+# Clean from previous database
+
+database_list = mongo_client.list_database_names()
+
+if 'projet-spectre' in database_list:
+    db = mongo_client.drop_database('projet-spectre')
+
+# Create project's database
+
 db = mongo_client['projet-spectre']
 
 
