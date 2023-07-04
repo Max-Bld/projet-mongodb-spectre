@@ -223,9 +223,6 @@ def unzipper():
     if os.path.exists(path_to_extract) == False :        
         os.mkdir(f"{path_to_extract}")
     
-    keywords_banned = ['stereo', 'wav', 'silence']
-    sound_source = root[-16:].removesuffix(r"/pitched")
-    
 
     file_list = os.listdir(path_to_zip)
 
@@ -353,10 +350,10 @@ def parameter_extractor(chunk_spectrum,chunk_frequency,list_note):
     if len(harmonics_frequency_position) != 0:
         first_harmonic = harmonics_frequency_position[0]
         print('----------------------')
-        print('first harmonics')
+        print('first harmonics (h1)')
         print(first_harmonic)
         max_harmonic = harmonics_frequency_position[np.argmax(harmonics_amplitude)]
-        print('Max harmonics')
+        print('Max harmonics (hm)')
         print(max_harmonic)
         
         
