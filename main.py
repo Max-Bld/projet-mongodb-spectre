@@ -34,13 +34,13 @@ from setup import unzipper
 # STEP 1 : Unzip file the file with all the sound files
 
 print('Dezipping files from ./assets/zip to ./assets/pitched ...')
-for i in tqdm(range(1000)):
+for i in tqdm(range(100)):
     unzipper()
 
 # STEP 2 : Make all the name standard for the treatement 
 
 print('Renaming files...')
-for i in tqdm(range(1000)):
+for i in tqdm(range(100)):
     renamer()
 
 # STEP 3 : read CSV file with the frequencies relative to all the notes
