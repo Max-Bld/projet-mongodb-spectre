@@ -210,6 +210,8 @@ def renamer():
 
 
 def unzipper():
+    
+    
     # Get current working path and create unzipped files directory
     
     # The next two line standardized the path file
@@ -217,6 +219,13 @@ def unzipper():
     root = (__file__.split(split_word)[0])
     path_to_zip = fr"{root}b-spectre\assets\theremin\zip".replace( "\\", "/")
     path_to_extract = fr"{root}b-spectre\assets\theremin\pitched".replace( "\\", "/")
+    
+    if os.path.exists(path_to_extract) == False :        
+        os.mkdir(f"{path_to_extract}")
+    
+    keywords_banned = ['stereo', 'wav', 'silence']
+    sound_source = root[-16:].removesuffix(r"/pitched")
+    
 
     file_list = os.listdir(path_to_zip)
 

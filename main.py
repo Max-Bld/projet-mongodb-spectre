@@ -53,6 +53,11 @@ from mongo_db_singleton import *
 
 mongo_client = MongoDBSingleton.get_instance().client
 
+database_list = mongo_client.list_database_names()
+
+for x in database_list[1:]:
+    db = mongo_client.drop_database(x)
+
 db = mongo_client['projet-spectre']
 
 
@@ -60,22 +65,30 @@ db = mongo_client['projet-spectre']
 schema = {
     "$jsonSchema": {
         "bsonType": "object",
-        "required": ["pitched", "type", "instrument", "option", "dynamique","fichier_octave", "signal", "spectre", "harmonique_amplitude", "harmonique_fondamental", "harmonique_distance_entre_harmonique","Note_first_harmonique","Note_max_harmonique"],
-        "properties": {
-            "pitched": {"bsonType": "bool"},
-            "type": {"bsonType": "string"},
-            "instrument": {"bsonType": "string"},
-            "option": {"bsonType": "string"}, 
-            "dynamique": {"bsonType": "string"},
-            "fichier_octave" : {"bsonType": "string"},
-            "signal": {"bsonType": "array"},
-            "spectre": {"bsonType": "array"},   
-            "harmonique_amplitude": {"bsonType": "array"},
-            "harmonique_fondamental": {"bsonType": "array"},
-            "harmonique_distance_entre_harmonique": {"bsonType": "array"},
-            "Note_first_harmonique": {"bsonType": "string"},
-            "Note_max_harmonique" : {"bsonType": "string"},
-            
+        "required": ["file_name", "pitched", "type", "instrument", "option", "dynamique","fichier_octave", "signal", "spectre", "harmonique_amplitude", "harmonique_fondamental", "harmonique_distance_entre_harmonique","Note_first_harmonique","Note_max_harmonique"],
+        "properties": {            
+                        "file_name":{"bsonType": "string"},                        
+                        "characteristics":  {
+                                            {"bsonType": "object"}, 
+                                            "pitched": {"bsonType": "bool"},
+                                            "type": {"bsonType": "string"},
+                                            "instrument": {"bsonType": "string"},
+                                            "option": {"bsonType": "string"}, 
+                                            "dynamique": {"bsonType": "string"},
+                                            },                        
+                        "array_features":   {
+                                            "signal": {"bsonType": "array"},
+                                            "spectre": {"bsonType": "array"}
+                                            },   
+                        
+                        "harmo_info":    {
+                                            "harmonique_amplitude": {"bsonType": "array"},
+                                            "harmonique_fondamental": {"bsonType": "array"},
+                                            "harmonique_distance_entre_harmonique": {"bsonType": "array"},
+                                            "Note_first_harmonique": {"bsonType": "string"},
+                                            "Note_max_harmonique" : {"bsonType": "string"}
+                                             },
+                        
         }
     }
 }
@@ -94,7 +107,7 @@ else :
 
 for index_file_name in range(len(list_file_names)):
     informations = list_file_names[index_file_name].split('_')
-
+    file_name_mongo = list_file_names[index_file_name]
     pitched = bool(informations[0])
     type_instrument_mongo = informations[1]
     instrument_mongo = informations[2]
@@ -112,20 +125,26 @@ for index_file_name in range(len(list_file_names)):
     
   
     doc_new = {
-      'pitched': pitched,
-      'type': type_instrument_mongo,
-      'instrument': instrument_mongo,
-      'option': option_mongo, 
-      'dynamique': dynamique_mongo,
-      'fichier_octave' : file_octave_mongo,
-      'signal': signal_mongo,
-      'spectre': spectre_mongo,
-      'harmonique_amplitude': harmonique_amplitude_mongo,
-      'harmonique_fondamental': harmonique_fondamental_mongo,
-      'harmonique_distance_entre_harmonique': harmonique_distance_between_harmonics_mongo,
-      'Note_first_harmonique' : Note_first_harmonique_mongo,
-      'Note_max_harmonique':Note_max_harmonique_mongo
-    }
+        "file_name": file_name_mongo,
+        "characteristics":  {
+                            'pitched': pitched,
+                            'type': type_instrument_mongo,
+                            'instrument': instrument_mongo,
+                            'option': option_mongo, 
+                            'dynamique': dynamique_mongo,
+                            },          
+          "array_features": {
+                            'signal': signal_mongo,
+                            'spectre': spectre_mongo
+                            },
+          "harmo_info":     {
+                            'harmonique_amplitude': harmonique_amplitude_mongo,
+                            'harmonique_fondamental': harmonique_fondamental_mongo,
+                            'harmonique_distance_entre_harmonique': harmonique_distance_between_harmonics_mongo,
+                            'Note_first_harmonique' : Note_first_harmonique_mongo,
+                            'Note_max_harmonique':Note_max_harmonique_mongo
+                            }
+        }
       
     
         # Ajouter ce dict comme un nouveau document dans la db mongodb
