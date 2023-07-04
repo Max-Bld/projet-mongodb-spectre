@@ -218,6 +218,9 @@ def unzipper():
     path_to_zip = fr"{root}b-spectre\assets\theremin\zip".replace( "\\", "/")
     path_to_extract = fr"{root}b-spectre\assets\theremin\pitched".replace( "\\", "/")
 
+    if os.path.exists(path_to_extract) == False :        
+        os.mkdir(f"{path_to_extract}")
+
     file_list = os.listdir(path_to_zip)
 
         # Execute the loop if the unzipped files directory is empty
