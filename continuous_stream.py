@@ -44,10 +44,6 @@ session = np.empty(0)
 
 #%% REAL TIME STREAM AND PLOT
 
-# MAX NO. OF POINTS TO STORE
-# que = deque(maxlen = chunk)
-# que_2 = deque(maxlen = 2**18)
-
 while True:    # infinite loop,
 # for n in range(5): # or specify the number of seconds
     
@@ -57,9 +53,6 @@ while True:    # infinite loop,
     # print(data)
     
     fft_result = spectrum(data)
-
-    # for y in data :
-    #     que.append(y)
         
 	
     	# PLOTTING THE POINTS
@@ -115,17 +108,6 @@ p.terminate()
 
 #%% Spectrum
 
-
-
-session_spectre = spectrum(session)
-
-fs = 44.1E3
-Nfft = 2**18
-df = fs/Nfft
-frequency = np.arange(0,Nfft*df,df)
-
-plt.figure(2)
-plt.plot(frequency,session_spectre)
 
 #%% READING ARRAY INTO AUDIO
 
